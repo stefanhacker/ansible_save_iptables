@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Stefan Hacker
+  description: Saves IP Tables ip4 and ipv6 rules
+  company: Hacker-Net Telekommuniaktion
+
+  license: MIT License
+
+  min_ansible_version: 2.6.4
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+
+  galaxy_tags:
+    - hackernet
+    - ubuntu
+    - bionic
+    - iptabels

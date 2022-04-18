@@ -1,0 +1,7 @@
+#which table which to save choose:
+#filter
+#nat
+#mangle
+#raw
+#security
+table_to_save: nat

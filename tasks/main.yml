@@ -1,0 +1,24 @@
+ #install apt iptables-persistent
+- name: install iptables-persistent
+  ansible.builtin.apt:
+    name: iptables-persistent
+    state: present
+- name: install as service
+  raw: systemctl enable netfilter-persistent.service
+  
+ # This will apply only to IPv6 filter table.
+- name: save current state of the firewall in system file
+  community.general.iptables_state:
+    ip_version: ipv6
+    table: " {{ table_to_save }}"
+    state: saved
+    path: /etc/iptables/rules.v6
+
+    # This will apply only to IPv4 filter table.
+- name: save current state of the firewall in system file
+  community.general.iptables_state:
+    ip_version: ipv4
+    table: "{{ table_to_save }}"
+    state: saved
+    path: /etc/iptables/rules.v4
+   
